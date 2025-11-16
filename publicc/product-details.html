@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Warranty Details | Warranty Tracker</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/components.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="./assets/js/warranty.js" type="module"></script>
+</head>
+<body>
+  <div id="toastContainer"></div>
+  <div id="header"></div>
+  <div id="appSidebar"></div>
+
+  <main class="main-container">
+    <a href="view-warranty.html" style="text-decoration:none;color:#2563eb;">← Back to list</a>
+    <h1 class="page-title" id="detailTitle">Warranty Details</h1>
+
+    <section class="card" id="detailCard" style="max-width:900px;margin:auto;">
+      <div id="detailContent">
+        <!-- injected content -->
+      </div>
+
+      <div style="margin-top:1rem;display:flex;gap:.5rem;">
+        <button id="editBtn" class="btn-primary">Edit</button>
+        <button id="deleteBtn" class="btn-danger">Delete</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>

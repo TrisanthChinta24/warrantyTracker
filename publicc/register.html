@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Warranty Tracker</title>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/components.css" />
+
+  <script src="./assets/js/auth.js" type="module" defer></script>
+</head>
+<body class="auth-body">
+  <main class="auth-container">
+    <div id="toastContainer"></div>
+    <div class="auth-card">
+      <div class="auth-header">
+        <i data-lucide="user-plus" class="auth-icon"></i>
+        <h1>Register</h1>
+      </div>
+
+      <form id="registerForm">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="name" required placeholder="Your full name" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email" required placeholder="Enter your email" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="password" required placeholder="Create password" />
+        </div>
+        <button type="submit" class="btn-primary w-full">
+          <i data-lucide="user-check"></i> Register
+        </button>
+      </form>
+
+      <p class="auth-footer">
+        Already have an account? <a href="login.html">Login</a>
+      </p>
+    </div>
+  </main>
+</body>
+</html>

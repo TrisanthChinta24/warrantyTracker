@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warranty Tracker | Dashboard</title>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/components.css" />
+
+  <script src="./assets/js/main.js" type="module"></script> 
+</head>
+
+<body>
+  <div id="toastContainer"></div>  
+  <div id="header"></div>
+  
+  <div id="appSidebar"></div>
+
+  <main class="main-container dashboard-container">
+    <div class="dashboard-header">
+      <h1 class="page-title"><i data-lucide="layout-grid"></i> My Warranties</h1>
+    </div>
+
+    <div class="dashboard-actions">
+        <input type="text" id="searchBox" placeholder="Search products..." />
+        <select id="filterSelect">
+          <option value="all">All</option>
+          <option value="expiring">Expiring Soon</option>
+          <option value="expired">Expired</option>
+          <option value="active">Active</option>
+    </select>
+      </div>
+    
+    <section id="productGrid" class="product-grid">
+      </section>
+
+    <a href="add-warranty.html" id="addProductBtn" class="floating-btn" title="Add New Warranty">
+      <i data-lucide="plus"></i>
+    </a>
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>

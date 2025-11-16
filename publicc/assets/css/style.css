@@ -1,0 +1,601 @@
+/* ==== GLOBAL RESET ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #f9f9fb;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ==== NAVBAR ==== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  height: 28px;
+  width: 28px;
+}
+
+.app-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: #333;
+  margin-left: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-right a:hover {
+  color: #2563eb;
+}
+
+/* ==== MAIN CONTENT ==== */
+.main-container {
+  padding: 1.5rem;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+/* ==== CARD GRID ==== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* ==== FOOTER ==== */
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ==== AUTH PAGES ==== */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.auth-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2563eb;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.switch-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.switch-link a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.switch-link a:hover {
+  text-decoration: underline;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.btn-secondary {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: .45rem .7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #333;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px dashed #e0e0e0;
+  padding: .45rem .7rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  padding: .45rem .7rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.muted { color:#666; font-size:.9rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+.warranty-card h3 {
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.card-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 8px;
+}
+
+/* --- Attachment Preview Section (add-warranty.html) --- */
+
+#filePreviewContainer {
+    display: flex;
+    flex-direction: column; /* Stack previews vertically */
+    gap: 15px;
+    padding: 15px;
+    border: 1px dashed var(--color-card-border);
+    border-radius: 8px;
+    background-color: var(--color-background-soft);
+}
+
+.file-preview-item {
+    display: flex;
+    justify-content: space-between; /* Space out the thumbnail/size and the title input */
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    border: 1px solid var(--color-card-border);
+    border-radius: 6px;
+    background-color: var(--color-background);
+    font-size: 0.9em;
+}
+
+.file-preview-thumbnail {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Styling for the Title Input Field */
+.file-title-input-group {
+    flex-grow: 1; /* Allow the input group to take up maximum space */
+}
+
+.custom-title-input {
+    width: 100%; /* Make the input fill its container */
+    padding: 8px 10px;
+    border: 1px solid var(--color-card-border);
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 0.9em;
+    background-color: var(--color-input-background);
+    color: var(--color-text);
+}
+
+.custom-title-input::placeholder {
+    color: var(--color-text-muted);
+}
+
+/* --- Attachment Detail Section (product-details.html) --- */
+
+.attachments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.attachment-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border: 1px solid var(--color-card-border);
+    border-radius: 6px;
+    background-color: var(--color-background-soft);
+    transition: background-color 0.2s;
+}
+
+.attachment-row:hover {
+    background-color: var(--color-background);
+}
+
+.attachment-name {
+    flex-grow: 1;
+    font-weight: 500;
+    color: var(--color-text);
+    padding-right: 15px;
+    word-break: break-word; /* Prevents long names from stretching the row */
+}
+
+.attachment-actions {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0; /* Ensures buttons don't wrap */
+}
+
+/* Common styling for the icon buttons (View, Rename, Delete) */
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.btn-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.btn-icon:hover {
+    background-color: var(--color-card-border);
+    color: var(--color-primary);
+}
+
+/* Specific color for the Delete button hover */
+.delete-btn:hover {
+    color: var(--color-danger);
+}
+
+/* --- New/Modified CSS for Small Thumbnail --- */
+
+/* 1. Style the link container to allow alignment */
+.attachment-info-link {
+    display: flex;
+    align-items: center; /* Vertically align the image and text */
+    gap: 10px;
+    flex-grow: 1;
+    text-decoration: none; /* Remove underline from the clickable area */
+    color: var(--color-text);
+}
+
+/* 2. Define the fixed size for the thumbnail image (approx 2cm visually) */
+.attachment-thumbnail {
+    width: 60px;  /* Approximately 2cm on most screens */
+    height: 80px; /* Makes it a perfect square */
+    object-fit: cover; /* Ensures the image is correctly cropped/fitted */
+    border-radius: 4px;
+    border: 1px solid var(--color-card-border);
+    flex-shrink: 0; /* Prevents the image from being squished */
+}
+
+/* 3. Ensure the attachment name stays visible */
+.attachment-name {
+    /* Reset flex-grow here to allow it to push the actions to the right */
+    flex-grow: 1; 
+    font-weight: 500;
+    padding-right: 15px;
+    word-break: break-word;
+}
+
+/* --- Card Footer Styling (view-warranty.html) --- */
+
+/* --- Warranty Card Footer --- */
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.9rem 1.2rem;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  border-radius: 0 0 var(--radius-base) var(--radius-base);
+}
+
+/* --- Action Buttons --- */
+.card-footer .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.45rem 2.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  background: var(--color-surface);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card-footer .btn-icon i {
+  width: 16px;
+  height: 16px;
+}
+
+/* --- Edit (default) --- */
+.card-footer .btn-icon:not(.btn-danger):not(.btn-secondary) {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.card-footer .btn-icon:not(.btn-danger):not(.btn-secondary):hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* --- Delete --- */
+.card-footer .btn-danger {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+.card-footer .btn-danger:hover {
+  background: var(--color-danger);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* --- Details --- */
+.card-footer .btn-secondary {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+.card-footer .btn-secondary:hover {
+  background: var(--color-secondary);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* --- Modal Overlay & Container --- */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark, semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is above all other content */
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal.hidden {
+    opacity: 0;
+    pointer-events: none; /* Prevents interaction when hidden */
+}
+
+/* --- Modal Content Box --- */
+
+.modal-content {
+    background-color: var(--color-card-background);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 550px; /* Optimal size for forms */
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.modal.hidden .modal-content {
+    transform: translateY(-20px); /* Small upward shift animation */
+}
+
+/* --- Modal Header --- */
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-card-border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.modal-content h2 i {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+}
+
+/* --- Form Elements --- */
+
+.modal-content label {
+    display: block;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.modal-content input[type="date"],
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--color-card-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none; /* For select consistency */
+    appearance: none;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-soft);
+    outline: none;
+}
+
+/* --- Modal Actions Footer --- */
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid var(--color-card-border);
+}
+
+/* Ensure buttons in modal actions use the standard styling */
+.modal-actions .btn-primary,
+.modal-actions .btn-secondary {
+    /* Uses the styles defined in the main components.css button section */
+    font-size: 0.9rem;
+    padding: 10px 20px;
+}
+
+
+/* --- Service Document Thumbnails --- */
+.service-documents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+  justify-content: flex-start;
+}
+
+.service-doc {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--color-background);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-doc:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-soft);
+}
+
+.service-doc img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Keeps image proportional without stretching */
+}
+
+/* Optional: Larger view on click */
+@media (min-width: 768px) {
+  .service-documents.large img {
+    width: 120px;
+    height: 120px;
+  }
+}

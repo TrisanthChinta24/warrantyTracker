@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Warranties | Warranty Tracker</title>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/components.css" />
+
+  <!-- Scripts -->
+  <script src="./assets/js/view-warranty.js" type="module"></script>
+</head>
+<body>
+  <div id="toastContainer"></div>  
+  <div id="header"></div>
+  
+  <div id="appSidebar"></div>
+
+  <main class="main-container">
+    <div class="view-header">
+      <h1 class="page-title"><i data-lucide="list"></i> All Warranties</h1>
+
+      <div class="view-actions">
+        <input type="text" id="searchInput" placeholder="Search warranties..." />
+        <select id="sortSelect">
+          <option value="soonest">Expiring Soon</option>
+          <option value="latest">Recently Added</option>
+        </select>
+      </div>
+    </div>
+
+    <section id="warrantyList" class="warranty-list">
+      <!-- Cards injected dynamically -->
+    </section>
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Warranty | Warranty Tracker</title>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/components.css" />
+
+  <script src="./assets/js/warranty.js" type="module" defer></script>
+</head>
+<body>
+  <div id="toastContainer"></div> <div id="header"></div>
+  <div id="appSidebar"></div>
+
+  <main class="main-container">
+    <h1 class="page-title"><i data-lucide="plus-circle"></i> Add New Warranty</h1>
+
+    <section class="form-section">
+      <form id="warrantyForm" enctype="multipart/form-data">
+        
+        <div class="upload-box" id="uploadBox">
+          <i data-lucide="upload"></i>
+          <p>Drag & Drop image here or <span>browse</span></p>
+          <input type="file" id="fileInput" accept="image/*" hidden /> 
+        </div>
+
+        <div id="ocrStatus" class="ocr-status hidden">
+          <i data-lucide="loader-2" class="spin"></i> Extracting details...
+        </div>
+
+        <div class="form-grid">
+          <div>
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" name="productName" required />
+          </div>
+          <div>
+            <label for="vendor">Vendor</label>
+            <input type="text" id="vendor" name="vendor" required />
+          </div>
+          <div>
+            <label for="purchaseDate">Purchase Date</label>
+            <input type="date" id="purchaseDate" name="purchaseDate" required />
+          </div>
+          <div>
+            <label for="expiryDate">Expiry Date</label>
+            <input type="date" id="expiryDate" name="expiryDate" required />
+          </div>
+          <div class="span-two">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Optional notes..."></textarea>
+          </div>
+        </div>
+
+        <div class="span-two" style="margin-top: 1rem;">
+            <label for="extraFiles">Extra Documents/Images (Receipts, Warranty Cards)</label>
+            <input type="file" id="extraFiles" name="extraFiles" accept="image/*" multiple /> 
+        </div>
+
+        <div class="span-two" id="filePreviewContainer" style="margin-top: 1rem;"></div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary"><i data-lucide="save"></i> Save Warranty</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>

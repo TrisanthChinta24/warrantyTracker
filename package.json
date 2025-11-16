@@ -1,0 +1,36 @@
+{
+  "name": "warrantytracker-backend",
+  "version": "1.0.0",
+  "description": "Our project manages your warranty cards. This is my first node project",
+  "license": "ISC",
+  "author": "Trisanth",
+  "type": "commonjs",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "agenda": "^5.0.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.19",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "googleapis": "^162.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.1",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "node-cron": "^4.2.1",
+    "node-tesseract-ocr": "^2.2.1",
+    "nodemailer": "^7.0.10",
+    "pdf-parse": "^2.4.5",
+    "pdf-poppler": "^0.2.3",
+    "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

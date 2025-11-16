@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warranty Tracker | Dashboard</title>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/components.css" />
+
+  <!-- JS -->
+  <script src="./assets/js/config.js"></script>
+  <script src="./assets/js/utils.js"></script>
+  <script src="./assets/js/main.js" defer></script>
+</head>
+<body>
+  <!-- Header / Sidebar / Footer dynamically injected -->
+  <div id="header"></div>
+  <div id="sidebarContainer"></div>
+
+  <main class="main-container">
+    
+    <div class="dashboard-header">
+      <h1 class="page-title"><i data-lucide="layout-dashboard"></i> My Warranties</h1>
+
+      <div class="dashboard-actions">
+        <input type="text" id="searchBox" placeholder="Search products..." />
+        <select id="filterSelect">
+          <option value="all">All</option>
+          <option value="expiring">Expiring Soon</option>
+          <option value="expired">Expired</option>
+          <option value="active">Active</option>
+        </select>
+      </div>
+    </div>
+    
+    <section id="productList" class="product-list">
+      <!-- Warranty cards injected dynamically -->
+    </section>
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>
