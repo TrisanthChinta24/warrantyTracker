@@ -104,6 +104,18 @@ The system allows users to digitally store warranty details, upload proof docume
 - node-cron – Scheduled jobs
 - Mongoose – Database modeling
 
+## Getting Started
+
+### Prerequisites
+- Node.js
+- MongoDB
+
+### Setup
+1. Clone the repository
+2. Install dependencies using `npm install`
+3. Create a `.env` file with required environment variables
+4. Run the server using `npm start`
+
 ## Project Architecture
 
 The backend follows a modular MVC-inspired structure:
