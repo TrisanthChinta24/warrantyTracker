@@ -26,11 +26,15 @@ const warrantySchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
-    images: [{ 
-        path: String,         
-        originalName: String,  
-        customName: String,    
-    }],
+    images: [
+      {
+        url: { type: String, required: true },
+        key: { type: String, required: true },
+        originalName: String,
+        customName: String
+      }
+    ],
+
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",

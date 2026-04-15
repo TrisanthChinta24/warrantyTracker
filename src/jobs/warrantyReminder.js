@@ -37,8 +37,8 @@ cron.schedule("0 9 * * *", async () => {
       }
     }
 
-    console.log("✅ Reminder check complete");
+    console.log("Reminder check complete");
   } catch (err) {
-    console.error("❌ Reminder check failed:", err.message);
+    console.error("Reminder check failed:", err.message);
   }
 });

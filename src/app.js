@@ -6,6 +6,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const connectDB = require("./config/db");
 const path = require("path");
+const fs = require("fs");
 const {serveFileForDownload} = require('./controllers/fileController'); // Import the new controller
 
 // Import Routes
@@ -37,14 +38,19 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Something went wrong!" });
 });
 
-// --- Static Frontend Serve Section ---
-const publicPath = path.join(__dirname, "../publicc");
-app.use(express.static(publicPath));
+// --- Static Frontend Serve Section (React SPA) ---
+const reactBuildPath = path.join(__dirname, "../react-app/dist");
+const legacyPublicPath = path.join(__dirname, "../publicc");
+const frontendPath = fs.existsSync(path.join(reactBuildPath, "index.html"))
+  ? reactBuildPath
+  : legacyPublicPath;
 
-// Catch-all route for frontend (except /api paths)
-// app.get(/^\/(?!api).*/, (req, res) => {
-//   res.sendFile(path.join(publicPath, "index.html"));
-// });
+app.use(express.static(frontendPath));
+
+// SPA fallback for non-API routes.
+app.get(/^\/(?!api|uploads|download).*/, (req, res) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
+});
 
 //starting the server
 const PORT = process.env.PORT || 5000;

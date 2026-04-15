@@ -15,5 +15,3 @@ router.delete("/:id", authMiddleware, warrantyController.deleteWarranty);
 router.delete("/:id/attachment", authMiddleware, warrantyController.deleteAttachment);
 
 module.exports = router;
-
-
